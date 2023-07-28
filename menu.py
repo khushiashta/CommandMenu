@@ -9,23 +9,23 @@ def command1():
     print("Running command 1...")
     server = smtplib.SMTP('smtp.gmail.com',587)
     server.starttls()
-    server.login('khushiashta12@gmail.com','egakibsvwwcmbflg')
-    server.sendmail('khushiashta12@gmail.com','	jaiswalaj2004@gmail.com','This message is sent by python code')
+    server.login('senders mail id','password')
+    server.sendmail('senders mail id','	receivers mail id','This message is sent by python code')
     print('mail sent successfully')
 
 def command2():
     print("Running command 2...")
-    pywhatkit.sendwhatmsg("+916239619772" , "hello, this message iss sent through python code",12,45,10,True,2)
+    pywhatkit.sendwhatmsg("number" , "hello, this message iss sent through python code",12,45,10,True,2)
 
 def command3():
     print("Running command 3...")
-    account_sid = 'AC79dbf2e53290d2423b9e7faaae18e0bf'
-    auth_token = '25a149a332aa2fd32cf773a2e4093988'
+    account_sid = '[auth_acc]'
+    auth_token = '[auth_token]'
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-            from_='+12295455397',
+            from_='twilio number',
             body='hello,how are you',
-            to='+916239619772'
+            to='number'
             )
     print(message.sid)
     print("Message sent")
